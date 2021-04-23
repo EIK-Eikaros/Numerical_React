@@ -102,6 +102,28 @@ const ConJu = () => {
                 </Form>
                 {result !== null && (
                     <Container className="mt-5 p-4 rounded bg-light">
+                        <h4>Check Positive Definite</h4>
+                        <Table striped bordered hover variant="dark">
+                            <thead>
+                                <tr>
+                                    <th>Matrix</th>
+                                    <th>Det</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {result.posi.map((r) => (
+                                    <tr key={r}>
+                                        <td>{JSON.stringify(r.t)}</td>
+                                        <td>{r.det}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </Table>
+                    </Container>
+                )}
+                {result !== null && (
+                    <Container className="mt-5 p-4 rounded bg-light">
+                        <h4>Result of Conjugate Gradient</h4>
                         <Table striped bordered hover variant="dark">
                             <thead>
                                 <tr>
@@ -113,6 +135,27 @@ const ConJu = () => {
                                 {result.answer.map((r, index) => (
                                     <tr key={r}>
                                         <td>{'x' + (index + 1)}</td>
+                                        <td>{r}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </Table>
+                    </Container>
+                )}
+                {result !== null && (
+                    <Container className="mt-5 p-4 rounded bg-light">
+                        <h4>Check result Ax = B</h4>
+                        <Table striped bordered hover variant="dark">
+                            <thead>
+                                <tr>
+                                    <th>Variables</th>
+                                    <th>Result multiply</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {result.last.map((r, index) => (
+                                    <tr key={r}>
+                                        <td>{'B' + (index + 1)}</td>
                                         <td>{r}</td>
                                     </tr>
                                 ))}

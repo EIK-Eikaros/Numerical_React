@@ -11,3 +11,6 @@ RUN npm install react-scripts -g
 EXPOSE 3000
 
 CMD [ "npm", "start" ]
+# docker run -it --rm -d -p 3000:3000 ingcharat/numer-frontend:lastest
+# build
+# docker build . -t ingcharat/numer-frontend:lastest
