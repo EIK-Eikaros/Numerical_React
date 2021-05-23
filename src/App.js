@@ -12,6 +12,7 @@ import LinearP from './pages/LinearP'
 import Inter from './pages/InteR'
 import Reges from './pages/RegS'
 import Mkb from './pages/MakeBy'
+import Test from './pages/Matrix_Input'
 function App() {
     return (
         <Router>
@@ -76,6 +77,9 @@ function App() {
                 </Route>
                 <Route path={'/home'}>
                     <Home />
+                </Route>
+                <Route path={'/test'}>
+                    <Test />
                 </Route>
                 <Route path={''}>
                     <Redirect to="/home" />
